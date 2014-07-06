@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int sum (int a, int b)
+int sum ( int a, int b )
 {
-	return a+b;
+	return a + b;
 }
 
 int task1()
@@ -20,7 +20,7 @@ int task1()
 	cout << "¢¢¥¤¨â¥ 2-¥ ç¨á«®" << endl;
 	cin >> b;
 	cout << "‚ë ¢¢¥«¨ " << a << " ¨ " << b << endl;
-	cout << "ˆå áã¬¬  à ¢­  " << sum (a, b) << endl;
+	cout << "ˆå áã¬¬  à ¢­  " << sum ( a, b ) << endl;
 	cout << endl;
 	return 0;
 }

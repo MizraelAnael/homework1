@@ -3,16 +3,16 @@
 
 using namespace std;
 
-int shet_nul (int* arr, int size)
+int shet_nul ( int* arr, int size )
 {
         int nul = 0;
         for ( int i = 0; i < size; i++ )
-                { // здесь лишняя табуляция. Можно все строки сдвинуть влево.
-                        if (arr[i] == 0)
-                                { // здесь лишняя табуляция. Можно все строки сдвинуть влево.
-                                        nul++;
-                                }
-                }
+			{ // здесь лишняя табуляция. Можно все строки сдвинуть влево.
+				if ( arr[i] == 0 )
+					{ // здесь лишняя табуляция. Можно все строки сдвинуть влево.
+						nul++;
+                    }
+            }
         return nul;
 }
 
@@ -25,12 +25,12 @@ int task2()
         int size = sizeof(arr) / sizeof(arr[0]);
         cout << "Данные массива:" << endl;
         // здесь лишняя табуляция. Можно весь цикл сдвинуть влево. Просто так удобнее читать код.
-                for ( int i = 0; i < size; i++ )
-                { // а вот отступы впорядке.
-                        cout << arr[i] << " ";
-                }
-                cout << endl;
-        cout << "Количество нулей в массиве: " << shet_nul (arr, size) << endl;
+        for ( int i = 0; i < size; i++ )
+			{ // а вот отступы впорядке.
+				cout << arr[i] << " ";
+            }
+        cout << endl;
+        cout << "Количество нулей в массиве: " << shet_nul ( arr, size ) << endl;
         cout << endl;
         return 0;
 }

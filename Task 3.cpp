@@ -68,3 +68,25 @@ int kol_slov (char* str, int probeli, int size) // Считает кол-во слов
 		}
 	return ++slova;
 	}
+
+int task3()
+{
+	cout << "Третья задача:" << endl;
+	// Дан массив из символов (строка). Подсчитать в ней кол-во пробелов и количество слов
+
+	char str[] = " Проверка  работы программы, которая   показывает  количество пробелов";
+	cout << "Дана строка: " << str << endl;
+	cout << "Количество пробелов: " << kol_prob (str, sizeof(str)) << endl;
+	char str2[200] = "/0";
+	char str3[200] = "/0";
+	strcpy (str3, str);
+	while ( doubleprob (str3) > 0)
+		{
+			del_doubleprob(str3, str2);
+			strcpy (str3, str2);
+		}
+	cout << "Строка без лишних пробелов: " << str2 << endl;
+	int n = kol_prob (str2, sizeof(str2));
+	cout << "Количество слов: " << kol_slov (str2, n, sizeof(str2)) << endl;
+	return 0;
+}

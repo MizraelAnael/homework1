@@ -13,6 +13,23 @@ int shet_nul (int* arr, int size)
 					nul++;
 				}
 		}
-	cout << "Количество нулей в массиве: " << nul << endl;
+	return nul;
+}
+
+int task2()
+{
+	cout << "Вторая задача:" << endl;
+	// Дан массив из целых чисел. Написат ьфункцию, которая считает в нем количество нулей
+
+	int arr[] = {0, 20, 15, 6, 0, 10, 36, 89, 90, 45, 7};
+	int size = sizeof(arr)/sizeof(arr[0]);
+	cout << "Данные массива:" << endl;
+		for ( int i = 0; i < size; i++ )
+		{
+			cout << arr[i] << " ";
+		}
+		cout << endl;
+	cout << "Количество нулей в массиве: " << shet_nul (arr, size) << endl;
+	cout << endl;
 	return 0;
 }

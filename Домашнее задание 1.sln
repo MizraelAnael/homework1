@@ -3,7 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Домашнее задание 1", "Домашнее задание 1\Домашнее задание 1.vcxproj", "{31C6AE00-D627-4773-BC62-E63976B3EE6B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeworkTest", "HomeworkTest\HomeworkTest.vcxproj", "{6747313E-991C-4A33-81C5-AD53F9575C8E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{31C6AE00-D627-4773-BC62-E63976B3EE6B} = {31C6AE00-D627-4773-BC62-E63976B3EE6B}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89625B9F-65D0-4DA7-AB23-9A1A7DDAB4B1}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		Домашнее задание 1.vsmdi = Домашнее задание 1.vsmdi
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HWLauncher", "HWLauncher\HWLauncher.vcxproj", "{36CD9281-118B-4295-95AC-9F1DFA88F1AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{31C6AE00-D627-4773-BC62-E63976B3EE6B} = {31C6AE00-D627-4773-BC62-E63976B3EE6B}
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Домашнее задание 1.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
@@ -13,6 +33,14 @@ Global
 		{31C6AE00-D627-4773-BC62-E63976B3EE6B}.Debug|Win32.Build.0 = Debug|Win32
 		{31C6AE00-D627-4773-BC62-E63976B3EE6B}.Release|Win32.ActiveCfg = Release|Win32
 		{31C6AE00-D627-4773-BC62-E63976B3EE6B}.Release|Win32.Build.0 = Release|Win32
+		{6747313E-991C-4A33-81C5-AD53F9575C8E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6747313E-991C-4A33-81C5-AD53F9575C8E}.Debug|Win32.Build.0 = Debug|Win32
+		{6747313E-991C-4A33-81C5-AD53F9575C8E}.Release|Win32.ActiveCfg = Release|Win32
+		{6747313E-991C-4A33-81C5-AD53F9575C8E}.Release|Win32.Build.0 = Release|Win32
+		{36CD9281-118B-4295-95AC-9F1DFA88F1AC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{36CD9281-118B-4295-95AC-9F1DFA88F1AC}.Debug|Win32.Build.0 = Debug|Win32
+		{36CD9281-118B-4295-95AC-9F1DFA88F1AC}.Release|Win32.ActiveCfg = Release|Win32
+		{36CD9281-118B-4295-95AC-9F1DFA88F1AC}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,5 @@
-#include "Task 1.h";
-#include <iostream>;
+#include "Task 1.h"
+#include <iostream>
 
 using namespace std;
 
@@ -8,7 +8,7 @@ int sum ( int a, int b )
 	return a + b;
 }
 
-int task1()
+void task1()
 {
 	cout << "Первая задача:" << endl; 
 	// Программа, которая получает от пользователя два числа и выводит их на экран. Суммирвоание должно проходить в отдельной функции
@@ -22,5 +22,4 @@ int task1()
 	cout << "Вы ввели " << a << " и " << b << endl;
 	cout << "Их сумма равна " << sum ( a, b ) << endl;
 	cout << endl;
-	return 0;
 }

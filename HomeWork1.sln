@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Домашнее задание 1", "Домашнее задание 1\Домашнее задание 1.vcxproj", "{31C6AE00-D627-4773-BC62-E63976B3EE6B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork1", "Домашнее задание 1\Домашнее задание 1.vcxproj", "{31C6AE00-D627-4773-BC62-E63976B3EE6B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeworkTest", "HomeworkTest\HomeworkTest.vcxproj", "{6747313E-991C-4A33-81C5-AD53F9575C8E}"
 	ProjectSection(ProjectDependencies) = postProject

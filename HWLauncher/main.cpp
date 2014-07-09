@@ -5,12 +5,13 @@
 
 using namespace std; 
 
-int main ()
+int main()
 {
 	task1 ();
 
     task2 ();
 
     task3 ();
-	system ("pause");
+
+	system ( "pause" );
 }

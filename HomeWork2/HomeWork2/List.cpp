@@ -103,6 +103,20 @@ void List::EnterElement (int value, int position)
 	CountListElements++;
 }
 
+int List::GetAmountElement (int position)
+{
+	node* previous = NULL;
+	node* current = head;
+	int i = 1;
+	while ( current != NULL && i < position)
+	{
+		previous = current;
+		current = current->next;
+		i++;
+	}
+	return current->value;
+}
+
 void List::GetInfoList ()
 {
 	node* current = head;

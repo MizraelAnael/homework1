@@ -25,6 +25,7 @@ public:
 	void AddLastElement (int value);
 	void Remove (int value);
 	void EnterElement (int value, int position);
+	int GetAmountElement (int position);
 	int GetCountElements ()
 	{
 		return CountListElements;

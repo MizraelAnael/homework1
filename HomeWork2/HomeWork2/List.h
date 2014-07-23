@@ -2,24 +2,38 @@
 #include <iostream>
 
 
-class List
+class ListOfElement
 {
 public:
 	int CountListElements;
 	
-	List()
+	ListOfElement()
 	{
 		CountListElements = 0;
-		head = tail = NULL;
+		head = tail = NULL;		
 	}
-	~List();
+	~ListOfElement();
 	int GetFirstElement ()
 	{
-		return head->value;
+		if (head == NULL)
+		{
+			return NULL;
+		}
+		else
+		{
+			return head->value;
+		}
 	}
 	int GetLastElement ()
 	{
-		return tail->value;
+		if (tail == NULL)
+		{
+			return NULL;
+		}
+		else
+		{
+			return tail->value;
+		}
 	}
 	void AddFirstElement (int value);
 	void AddLastElement (int value);

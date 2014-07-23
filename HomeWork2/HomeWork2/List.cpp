@@ -1,7 +1,7 @@
 #include <iostream>
 #include "List.h"
 
-List::~List()
+ListOfElement::~ListOfElement()
 {
 	node* current = NULL;
 	node* next = head;
@@ -13,7 +13,7 @@ List::~List()
 	}
 }
 
-void List::AddFirstElement (int value)
+void ListOfElement::AddFirstElement (int value)
 {
 	node* NewElement = new node (value, head);
 	if (!head)
@@ -24,7 +24,7 @@ void List::AddFirstElement (int value)
 	CountListElements++;
 }
 
-void List::AddLastElement (int value)
+void ListOfElement::AddLastElement (int value)
 {
 	node* previous = NULL;
 	node* current = head;
@@ -51,17 +51,24 @@ void List::AddLastElement (int value)
 	CountListElements++;
 }
 
-void List::Remove (int position)
+void ListOfElement::Remove (int position)
 {
-	node* previous = NULL;
-	node* current = head;
-	int i = 1;
-	while (current != NULL && i < position)
+	if (CountListElements == 1)
 	{
-		previous = current;
-		current = current->next;
-		i++;
+		CountListElements = 0;
+		head = tail = NULL;
 	}
+	else
+	{
+		node* previous = NULL;
+		node* current = head;
+		int i = 1;
+		while (current != NULL && i < position)
+		{
+			previous = current;
+			current = current->next;
+			i++;
+		}
 		if (previous)
 		{
 			previous->next = current->next;
@@ -70,11 +77,16 @@ void List::Remove (int position)
 		{
 			tail = previous;
 		}
+		if (current == head)
+		{
+			head = head->next;
+		}
 		delete current;
 		CountListElements--;
+	}	
 }
 
-void List::EnterElement (int value, int position)
+void ListOfElement::EnterElement (int value, int position)
 {
 	node* previous = NULL;
 	node* current = head;
@@ -103,7 +115,7 @@ void List::EnterElement (int value, int position)
 	CountListElements++;
 }
 
-int List::GetAmountElement (int position)
+int ListOfElement::GetAmountElement (int position)
 {
 	node* previous = NULL;
 	node* current = head;
@@ -117,14 +129,21 @@ int List::GetAmountElement (int position)
 	return current->value;
 }
 
-void List::GetInfoList ()
+void ListOfElement::GetInfoList ()
 {
-	node* current = head;
-	std::cout << "Элементы списка: " << std::endl;
-	while (current)
+	if (CountListElements)
 	{
-		std::cout << current->value << " ";
-		current = current->next;
+		node* current = head;
+		std::cout << "Элементы списка: " << std::endl;
+		while (current)
+		{
+			std::cout << current->value << " ";
+			current = current->next;
+		}
+		std::cout << std::endl;
 	}
-	std::cout << std::endl;
+	else
+	{
+		std::cout << "Список пуст" << std::endl;
+	}
 }

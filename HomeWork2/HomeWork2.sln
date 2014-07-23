@@ -4,12 +4,20 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork2", "HomeWork2\HomeWork2.vcxproj", "{CE7607C2-685F-4782-A2FC-E59B95B3C1D7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestList", "TestList\TestList.vcxproj", "{F93C8A2E-6474-46F7-95E6-01E631F00BC9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE7607C2-685F-4782-A2FC-E59B95B3C1D7} = {CE7607C2-685F-4782-A2FC-E59B95B3C1D7}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2B038C29-3B86-486E-AA78-1130983E678B}"
 	ProjectSection(SolutionItems) = preProject
 		HomeWork2.vsmdi = HomeWork2.vsmdi
 		Local.testsettings = Local.testsettings
 		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LauncherHW2", "LauncherHW2\LauncherHW2.vcxproj", "{36E8D15A-BB90-48D7-8274-BF1619CA7FE2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE7607C2-685F-4782-A2FC-E59B95B3C1D7} = {CE7607C2-685F-4782-A2FC-E59B95B3C1D7}
 	EndProjectSection
 EndProject
 Global
@@ -29,6 +37,10 @@ Global
 		{F93C8A2E-6474-46F7-95E6-01E631F00BC9}.Debug|Win32.Build.0 = Debug|Win32
 		{F93C8A2E-6474-46F7-95E6-01E631F00BC9}.Release|Win32.ActiveCfg = Release|Win32
 		{F93C8A2E-6474-46F7-95E6-01E631F00BC9}.Release|Win32.Build.0 = Release|Win32
+		{36E8D15A-BB90-48D7-8274-BF1619CA7FE2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{36E8D15A-BB90-48D7-8274-BF1619CA7FE2}.Debug|Win32.Build.0 = Debug|Win32
+		{36E8D15A-BB90-48D7-8274-BF1619CA7FE2}.Release|Win32.ActiveCfg = Release|Win32
+		{36E8D15A-BB90-48D7-8274-BF1619CA7FE2}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

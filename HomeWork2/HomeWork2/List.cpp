@@ -1,149 +1,154 @@
-#include <iostream> // тут уже можно не включать этот заголовок. Он подтянется из List.h.
 #include "List.h"
+
+ListOfElement::ListOfElement ()
+    {
+        CountListElements = 0;
+        head = tail = NULL;             
+    }
 
 ListOfElement::~ListOfElement()
 {
-        node* current = NULL;
-        node* next = head;
-        while (next)
-        {
-                current = next;
-                next = next->next;
-                delete current;
-        }
+    node* current = NULL;
+    node* next = head;
+    while (next)
+    {
+        current = next;
+        next = next->next;
+        delete current;
+    }
 }
+
+int ListOfElement::GetFirstElement ()
+    {
+        if (head == NULL)
+        {
+            return NULL;
+        }
+        else
+        {
+            return head->value;
+        }
+    }
+
+int ListOfElement::GetLastElement ()
+    {
+        if (tail == NULL)
+        {
+            return NULL;
+        }
+        else
+        {
+            return tail->value;
+        }
+    }
 
 void ListOfElement::AddFirstElement (int value)
 {
-        node* NewElement = new node (value, head);
-        if (!head)
-        {
-                tail = NewElement;
-        }
-        head = NewElement;
-        CountListElements++;
+    node* NewElement = new node (value, head);
+    if (!head)
+    {
+        tail = NewElement;
+    }
+    head = NewElement;
+    CountListElements++;
 }
+
+int ListOfElement::GetCountElements ()
+    {
+        return CountListElements;
+    }
 
 void ListOfElement::AddLastElement (int value)
 {
-        node* previous = NULL;
-        node* current = head;
-        while ( current != NULL )
-        {
-                previous = current;
-                current = current->next;                
-        }
+    node* previous = NULL;
+    node* current = head;
+    while ( current != NULL )
+    {
+        previous = current;
+        current = current->next;                
+    }
 
-        node* NewElement = new node (value, current);
-        if (current == NULL)
-        {
-                tail = NewElement;
-        }
+    node* NewElement = new node (value, current);
+    if (current == NULL)
+    {
+        tail = NewElement;
+    }
 
-        if (previous == NULL)
-        {
-                head = NewElement;
-        }
-        else
-        {
-                previous->next = NewElement;
-        }
-        CountListElements++;
+    if (previous == NULL)
+    {
+        head = NewElement;
+    }
+    else
+    {
+        previous->next = NewElement;
+    }
+    CountListElements++;
 }
 
-void ListOfElement::Remove (int position)
+void ListOfElement::removeFirstElement ()
 {
-        if (CountListElements == 1)
-        {
-                CountListElements = 0;
-                head = tail = NULL;
-        }
-        else
-        {
-                node* previous = NULL;
-                node* current = head;
-                int i = 1;
-                while (current != NULL && i < position)
-                {
-                        previous = current;
-                        current = current->next;
-                        i++;
-                }
-                if (previous)
-                {
-                        previous->next = current->next;
-                }
-                if (current == tail)
-                {
-                        tail = previous;
-                }
-                if (current == head)
-                {
-                        head = head->next;
-                }
-                delete current;
-                CountListElements--;
-        }       
+	node* current = head;
+	if (current)
+	{
+		if (CountListElements == 1)
+		{
+			delete current;			
+			head = tail = NULL;
+		}
+		else
+		{
+			head = current->next;
+			delete current;
+		}
+		CountListElements--;
+	}
+	else
+		std::cout << "Список пуст, нет элемента для удаления!" << std::endl;
 }
 
-void ListOfElement::EnterElement (int value, int position)
+void ListOfElement::removeLastElement ()
 {
-        node* previous = NULL;
-        node* current = head;
-        int i = 1;
-        while ( current != NULL && i < position)
-        {
-                previous = current;
-                current = current->next;
-                i++;
-        }
-
-        node* NewElement = new node (value, current);
-        if (current == NULL)
-        {
-                tail = NewElement;
-        }
-
-        if (previous == NULL)
-        {
-                head = NewElement;
-        }
-        else
-        {
-                previous->next = NewElement;
-        }
-        CountListElements++;
-}
-
-int ListOfElement::GetAmountElement (int position)
-{
-        node* previous = NULL;
-        node* current = head;
-        int i = 1;
-        while ( current != NULL && i < position)
-        {
-                previous = current;
-                current = current->next;
-                i++;
-        }
-        return current->value;
+	node* previous = NULL;
+	node* current = head;
+	if (current)
+	{
+		if (CountListElements == 1)
+		{
+			delete current;			
+			head = tail = NULL;
+		}
+		else
+		{
+			while (current != tail)
+			{
+				previous = current;
+				current = current->next;
+			}
+			delete current;
+			previous->next = NULL;
+			tail = previous;
+		}
+		CountListElements--;
+	}
+	else
+		std::cout << "Список пуст, нет элемента для удаления!" << std::endl;
 }
 
 void ListOfElement::GetInfoList ()
 {
-        if (CountListElements)
+    if (CountListElements)
+    {
+        node* current = head;
+        std::cout << "Элементы списка: " << std::endl;
+        while (current)
         {
-                node* current = head;
-                std::cout << "Элементы списка: " << std::endl;
-                while (current)
-                {
-                        std::cout << current->value << " ";
-                        current = current->next;
-                }
-                std::cout << std::endl;
+            std::cout << current->value << " ";
+            current = current->next;
         }
-        else
-        {
-                std::cout << "Список пуст" << std::endl;
-        }
+        std::cout << std::endl;
+    }
+    else
+    {
+		std::cout << "Список пуст" << std::endl;
+    }
 }

@@ -19,14 +19,9 @@ public:
 private:
         struct node
         {
-                node* next;
-                int value;
-
-                node (int i, node* n = NULL)
-                {
-                        value = i;
-                        next = n;
-                }
+            node* next;
+            int value;
+            node (int i, node* n = NULL);
         };
         node* head;
         node* tail;

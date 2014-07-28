@@ -18,6 +18,12 @@ ListOfElement::~ListOfElement()
     }
 }
 
+ListOfElement::node::node (int i, node* n)
+{
+        value = i;
+        next = n;
+}
+
 int ListOfElement::GetFirstElement ()
     {
         if (head == NULL)
@@ -60,28 +66,12 @@ int ListOfElement::GetCountElements ()
 
 void ListOfElement::AddLastElement (int value)
 {
-    node* previous = NULL;
-    node* current = head;
-    while ( current != NULL )
-    {
-        previous = current;
-        current = current->next;                
-    }
-
-    node* NewElement = new node (value, current);
-    if (current == NULL)
-    {
-        tail = NewElement;
-    }
-
-    if (previous == NULL)
-    {
-        head = NewElement;
-    }
+    node* NewElement = new node (value, NULL);
+    if (!head)
+		head = NewElement;    
     else
-    {
-        previous->next = NewElement;
-    }
+		tail->next = NewElement;
+	tail = NewElement;
     CountListElements++;
 }
 

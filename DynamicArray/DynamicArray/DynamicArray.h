@@ -1,13 +1,6 @@
 #pragma once
 
-// Действительно ли эти включения нужны для компиляции данного заголовочного файла?
-#include <string>
-#include <sstream> 
 #include <iostream> 
-
-using namespace std; // Этого не должно быть в заголовочном файле.
-
-// Константные методы нужно пометить с помощью const
 
 class DynamicArray
 {
@@ -19,13 +12,13 @@ public:
         DynamicArray (const DynamicArray& rhs);
         DynamicArray operator= (const DynamicArray& rhs);
         void clear();
-        int size();
-        bool isEmpty();
+        int size() const;
+        bool isEmpty() const;
         void push_back (int element);
         void pop_back();
-        int get_back();
-        string toString();
-        void printArray();
+        int get_back() const;
+        std::string toString() const;
+        void printArray() const;
         class iterator
         {
         public:
@@ -37,17 +30,17 @@ public:
                 // это пережиток языка С. В нем нельзя было перегружать функции, ну и конструкторы конечно :).
                 // Тут кому как нравится - вопрос стиля программирования.
                 iterator(int *iter_ = 0) : iter(iter_) {}               
-                int& operator*();               
-                int* operator->();              
+                int& operator*() const;               
+                int* operator->() const;              
                 iterator& operator++();         
                 iterator operator++(int);               
-                bool operator ==(const iterator& temp);         
-                bool operator != (const iterator& temp);                
+                bool operator ==(const iterator& temp) const;         
+                bool operator != (const iterator& temp) const;                
         private:
                 int *iter;
         };
-        iterator begin();
-        iterator end();
+        iterator begin() const;
+        iterator end() const;
 private:
         int *arr;
         int counter;

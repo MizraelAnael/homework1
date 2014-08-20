@@ -1,5 +1,9 @@
 #include "DynamicArray.h"
 
+#include <sstream> 
+
+using namespace std;
+
 DynamicArray::DynamicArray()
 {       
         arr = nullptr;
@@ -52,7 +56,7 @@ void DynamicArray::pop_back()
         */
 }
 
-int DynamicArray::get_back()
+int DynamicArray::get_back() const
 {
         if (counter > 0)
                 return arr[counter - 1];
@@ -60,14 +64,14 @@ int DynamicArray::get_back()
                 throw std::runtime_error ("Array is empty. You couldn't take element");
 }
 
-bool DynamicArray::isEmpty()
+bool DynamicArray::isEmpty() const
 {
         if (counter == 0)
                 return true;     
         return false;
 }
 
-int DynamicArray::size()
+int DynamicArray::size() const
 {
         return counter;
 }
@@ -78,7 +82,7 @@ void DynamicArray::clear()
         counter = 0;
 }
 
-string DynamicArray::toString()
+string DynamicArray::toString() const
 {
         stringstream ss;
         if (counter == 0)
@@ -94,17 +98,17 @@ string DynamicArray::toString()
         }
 }
 
-void DynamicArray::printArray()
+void DynamicArray::printArray() const
 {
         cout << toString() << endl;
 }
 
-DynamicArray::iterator DynamicArray::begin()
+DynamicArray::iterator DynamicArray::begin() const
 {
         return arr;
 }
 
-DynamicArray::iterator DynamicArray::end()
+DynamicArray::iterator DynamicArray::end() const
 {
         return arr+counter;
 }
@@ -129,12 +133,12 @@ void DynamicArray::copyArray(DynamicArray& copy, const DynamicArray& origin)
                 copy.push_back (origin.arr[i]);
 }
 
-int& DynamicArray::iterator::operator*()
+int& DynamicArray::iterator::operator*() const
 {
         return *iter;
 }
 
-int* DynamicArray::iterator::operator->()
+int* DynamicArray::iterator::operator->() const
 {
         return iter;
 }
@@ -152,14 +156,14 @@ DynamicArray::iterator DynamicArray::iterator::operator++(int)
         return temp;
 }
 
-bool DynamicArray::iterator::operator ==(const iterator& temp)
+bool DynamicArray::iterator::operator ==(const iterator& temp) const
 {
         if (this->iter == temp.iter)
                 return true;
         return false;
 }
 
-bool DynamicArray::iterator::operator != (const iterator& temp)
+bool DynamicArray::iterator::operator != (const iterator& temp) const
 {
         return !(*this == temp);
 }
